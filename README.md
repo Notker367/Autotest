@@ -1,0 +1,3 @@
+# Autotest
+Project for stepic
+
