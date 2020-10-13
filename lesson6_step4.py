@@ -1,0 +1,32 @@
+from selenium import webdriver
+import time
+
+link = "http://suninjuly.github.io/simple_form_find_task.html"
+
+try:
+    browser = webdriver.Chrome(executable_path="C:\webdrivers\chromedriver_win32\chromedriver_win32 (1)\chromedriver.exe")
+    browser.get("http://suninjuly.github.io/simple_form_find_task.html")
+
+    input1 = browser.find_element_by_tag_name("input")
+    input1.send_keys("Ivan")
+    print("1 OK")
+    input2 = browser.find_element_by_name("last_name")
+    input2.send_keys("Petrov")
+    print("2 OK")
+    input3 = browser.find_element_by_class_name("form-control.city")
+    print("3 OK find")
+    input3.send_keys("Smolensk")
+    print("3 OK")
+    input4 = browser.find_element_by_id("country")
+    input4.send_keys("Russia")
+    print("4 OK")
+    button = browser.find_element_by_css_selector("button.btn")
+    button.click()
+
+finally:
+    # успеваем скопировать код за 30 секунд
+    time.sleep(30)
+    # закрываем браузер после всех манипуляций
+    browser.quit()
+
+# не забываем оставить пустую строку в конце файла
