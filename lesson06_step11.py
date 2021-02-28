@@ -5,7 +5,7 @@ import math
 link = "http://suninjuly.github.io/registration2.html"
 
 try:
-    browser = webdriver.Chrome(executable_path="C:\webdrivers\chromedriver_win32\chromedriver_win32 (1)\chromedriver.exe")
+    browser = webdriver.Chrome(executable_path="D:\WebDrvers\Chrome\chromedriver_win32")
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
