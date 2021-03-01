@@ -5,15 +5,20 @@ import math
 link = "http://suninjuly.github.io/registration2.html"
 
 try:
-    browser = webdriver.Chrome(executable_path="D:\WebDrvers\Chrome\chromedriver_win32")
+    browser = webdriver.Chrome(executable_path="D:\WebDrvers\Chrome\chromedriver_win32\chromedriver.exe")
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    elements = browser.find_elements_by_tag_name("input")
-    n = 0
-    for element in elements:
+
+    def text_inputer(element):
+        n = 0
         n = n + 1
         element.send_keys("Мой ответ" + str(n))
+
+
+    text_inputer(browser.find_element_by_xpath("//input[@placeholder='Input your first name']"))
+    text_inputer(browser.find_element_by_xpath("//input[@placeholder='Input your last name']"))
+    text_inputer(browser.find_element_by_xpath("//input[@placeholder='Input your email']"))
 
     # Отправляем заполненную форму
     button = browser.find_element_by_css_selector("button.btn")
