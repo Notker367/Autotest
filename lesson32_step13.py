@@ -37,9 +37,10 @@ class TestForms(unittest.TestCase):
         # ожидание чтобы визуально оценить результаты прохождения скрипта
         time.sleep(2)
         # закрываем браузер после всех манипуляций
-        browser.quit()
+        # browser.quit()
         # Проверяем текст
         self.assertEqual("Congratulations! You have successfully registered!", welcome_text)
+        time.sleep(2)
 
     def test_reg2(self):
         # Переход по ссылке
